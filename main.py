@@ -1,7 +1,7 @@
-from bottle import get, run, error
+from bottle import get, run, error, default_app
 import CodeNameGen
 
-app = bottle.default_app()
+app = default_app()
 
 @get('/')
 def index():
@@ -20,4 +20,4 @@ def error404(code):
     return "huh?  What are you looking for again?"
 
 if __name__=="__main__":
-    run(host='localhost', port=8080)
+    run(host='0.0.0.0', port=8000)
